@@ -1,5 +1,5 @@
 android-egitim
-==============
+================
 
 Anrdoid eğitimi sırasında yazdığımız uygulama
 
