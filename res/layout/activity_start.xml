@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".StartActivity" 
+    android:orientation="horizontal"
+    android:background="@color/pale_turquoise">
+	<!-- LinearLayout icindekileri ya enine ya da boyuna siraliyor. 
+	 android:orientation ile enine siralamasini istedik-->
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/movie" 
+        android:contentDescription="@string/number_game_button_desc" 
+        android:background="#0000"
+        android:padding="10dp"
+        android:onClick="startGameActivity" />
+	<!-- android:layout_width ve android:layout_height ozellikleri enini boyunu gosteriyor 
+    	wrap_content butonun buyuklugunu icerigine gore ayarla, match_parent de 
+    	butonun icinde oldugu layoutun icini kapla manasinda kullaniliyor -->
+    <!-- android:background butonun rengini veriyor, #0000 ise transparan yapiyor -->
+    <!-- android:src ise hangi imaji kullanacagimiz gosteriyor. Imaj butonu isminin hepsi kucuk harf olmasi gerekiyor -->
+    <!-- android:onClick'te buton tiklandiginda cagirilacak metodun adini yaziyoruz. Bu metod StartActivity.java'nin icinde -->
+    
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/contacts" 
+        android:contentDescription="@string/person_list_button_desc"
+        android:background="#0000" 
+        android:padding="10dp"
+        android:onClick="startPersonListActivity" />
+
+</LinearLayout>

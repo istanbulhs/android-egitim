@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="16sp"
+    android:id="@+id/person_name_text_view"
+    android:padding="10dp"
+    android:textIsSelectable="false">    
+</TextView>
+<!-- Listedeki tek satirin nasil gozukecegini burdan ayarliyoruz -->
+<!-- metin boyunu 16sp olarak verdik. sp ekran boyutu ve cozunurlugune orantili olan bir birim. px yerine bunu tercih ediyoruz -->
+<!-- Metnin etrafina boslugu padding ozelligi ile verdik. dp gene sp gibi ekran boyutu ve cozunurluge orantili bir birim. -->
+<!-- wrap_content satir boyunu metine gore ayarliyor. match_parent ise satir enini icinde bulundugu listview'un icine kaplayacak sekilde ayarliyor -->
