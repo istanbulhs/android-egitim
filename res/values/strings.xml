@@ -4,5 +4,46 @@
     <string name="app_name">IstanbulHsApp</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_start">StartActivity</string>
+    <string name="number_game_button_desc">Sayı bilmece oyunu</string>
+    <string name="person_list_button_desc">Kişi listesi</string>
+
+    <string-array name="person_name_list">
+        <item>	Dr. Arif Ali Albayrak	</item>
+        <item>	Edip Cansever	</item>
+        <item>	Enis Batur	</item>
+        <item>	Enver Gökçe	</item>
+        <item>	Erdem Bayazıt	</item>
+        <item>	Erkan Bal	</item>
+        <item>	Erzurumlu Emrah	</item>
+        <item>	Erzurumlu İbrahim Hakkı	</item>
+        <item>	Eşrefoğlu Rumi	</item>
+        <item>	Faruk Nafiz Çamlıbel	</item>
+        <item>	Fazıl Hüsnü Dağlarca	</item>
+        <item>	Fehmi Hilmi Cumalıoğlu	</item>
+        <item>	Fuzuli	</item>
+        <item>	Gedayi	</item>
+        <item>	Gevheri	</item>
+    </string-array>
+    <string-array name="person_email_list">
+        <item>	arif@albayrak.com	</item>
+        <item>	edip@cansever.com	</item>
+        <item>	enis@batur.com	</item>
+        <item>	enver@gokce.com	</item>
+        <item>	erdem@bayazit.com	</item>
+        <item>	erkan@bal.com	</item>
+        <item>	emrah@erzurum.com	</item>
+        <item>	ibrahim@erzurum.com	</item>
+        <item>	rumi@esrefoglu.com	</item>
+        <item>	nafiz@camlibel.com	</item>
+        <item>	fazil@daglarca.com	</item>
+        <item>	fehmi@cumalioglu.com	</item>
+        <item>	fuzuli@fas.com	</item>
+        <item>	gedayi@osmanli.com	</item>
+        <item>	gevheri@anadolu.com	</item>
+    </string-array>
+
+    <string name="title_activity_person_list">PersonListActivity</string>
+    <string name="empty_list">Liste boş</string>
 
 </resources>

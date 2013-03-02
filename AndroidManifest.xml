@@ -3,25 +3,38 @@
     package="org.istanbulhs.istanbulhsapp"
     android:versionCode="1"
     android:versionName="1.0" >
-
+    <!-- Eger uygulamayi play store'a yukleyecekseniz bu 'package' isminin hep ayni kalmasi gerekiyor -->
+    <!-- Ustte uygulamanin versiyonunu belirtiyoruz. Android play store'a yuklediginiz uygulamalar icin
+    her guncellemede bu versiyon numarasi buyuyor. VersionCode kod adi vermenizi sagliyor. Ice Cream Sandwich gibi -->
+    <!-- Asagidaki tag'de uygulamayi hangi android versiyonu ile yazdigimizi ve geriye donuk hangi versiyona kadar
+    estekledigimizi yaziyoruz -->
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
-
+    <!-- Asagidaki tag'in icine uygulamanin backup edilebilir olup olmadigi, uygulama iconunu, uygulama adini,
+    	uygulama temasinin ne oldugunu belirtiyoruz -->
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <!-- Uygulamaya ekledigimiz her aktivite icin asagidakine benzer bir tag giriyoruz -->
         <activity
-            android:name="org.istanbulhs.istanbulhsapp.MainActivity"
-            android:label="@string/app_name" >
+            android:name="org.istanbulhs.istanbulhsapp.StartActivity"
+            android:label="@string/title_activity_start" >
+            <!-- Asagidaki kisim baslangicta calistirilan aktivitenin icine yaziliyor -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="org.istanbulhs.istanbulhsapp.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="org.istanbulhs.istanbulhsapp.PersonListActivity"
+            android:label="@string/title_activity_person_list" >
+        </activity>
     </application>
-
 </manifest>
