@@ -35,7 +35,7 @@ public class LatestNewsAsyncTask extends AsyncTask<Void, Void, String> {
 	
 	private String retrieveLatestNews() {
 		String url = "http://hamdi.safkanyazilim.com/json/latest";
-		String response = HttpUtil.getResponseStringForHttpRequest(url);
+		String response = HttpUtil.getResponseStringForHttpRequestBetter(url);
 		Log.i("hs", response);
 		
 		return response;

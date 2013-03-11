@@ -1,12 +1,16 @@
 package org.istanbulhs.istanbulhsapp.utils;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.SocketException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +31,9 @@ import android.util.Log;
 
 
 public class HttpUtil {
+	//Request atip sonucu almak icin yazdigimiz metod
+	//apache'nin HttpClient'ini kullaniyor - GingerBread'den itibaren HttpURLConnection
+	//tavsiye ediyorlar - bu dosyanin en altindaki metoda bakin
     public static String getResponseStringForHttpRequest(String url) {
         return HttpUtil.getResponseStringForHttpRequest(url, "", null);
     }
@@ -113,4 +120,41 @@ public class HttpUtil {
 
         return output;
     }
+    
+    //For Gingerbread and better, HttpURLConnection is the best choice
+    //http://android-developers.blogspot.com/2011/09/androids-http-clients.html
+    public static String getResponseStringForHttpRequestBetter(String stringUrl) {
+    	
+    	URL url = null;
+    	String responseString = null;
+    	
+		try {
+			url = new URL(stringUrl);
+		} catch (MalformedURLException e) {
+			Log.e("hs", e.getMessage());
+		}
+		
+		if (url != null) {
+	    	HttpURLConnection urlConnection = null;
+			
+	    	try {
+				urlConnection = (HttpURLConnection)url.openConnection();
+			} catch (IOException e) {
+				Log.e("hs", e.getMessage());
+			}
+	    	
+	    	try {
+	    		InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+	    		responseString = convertStreamToString(in);
+	    	} catch (IOException e) {
+	    		Log.e("hs", e.getMessage());
+	    	} finally {
+	    	     urlConnection.disconnect();
+	    	}
+		}
+		
+    	return responseString;
+    	 
+    }
+    
 }
