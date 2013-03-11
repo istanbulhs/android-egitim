@@ -45,5 +45,11 @@
 
     <string name="title_activity_person_list">PersonListActivity</string>
     <string name="empty_list">Liste boş</string>
-
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="welcome_string">Hackerspace android uygulamasına hoşgeldiniz!</string>
+     <string name="title_activity_tab_navigation">TabNavigationActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
