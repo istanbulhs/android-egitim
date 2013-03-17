@@ -2,9 +2,11 @@ package org.istanbulhs.istanbulhsapp;
 
 import java.util.Locale;
 
+import org.istanbulhs.istanbulhsapp.fragments.ContactFragment;
 import org.istanbulhs.istanbulhsapp.fragments.ItemFragment;
 import org.istanbulhs.istanbulhsapp.fragments.NormalFragment;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -87,6 +89,9 @@ public class TabNavigationActivity extends FragmentActivity  {
 					args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
 					fragment.setArguments(args);
 					return fragment;
+				case 3:
+					fragment = new ContactFragment();
+					return fragment;
 			}
 			return fragment;
 		}
@@ -95,7 +100,7 @@ public class TabNavigationActivity extends FragmentActivity  {
 		@Override
 		public int getCount() {
 			// Show 3 total pages.
-			return 3;
+			return 4;
 		}
 
 		//Tab basliklarini donen metod
@@ -109,6 +114,8 @@ public class TabNavigationActivity extends FragmentActivity  {
 				return "BIZIM LISTE";
 			case 2:
 				return getString(R.string.title_section3).toUpperCase(l);
+			case 3:
+				return "BIZIM KISILER";
 			}
 			return null;
 		}
@@ -137,8 +144,11 @@ public class TabNavigationActivity extends FragmentActivity  {
 					R.layout.fragment_tab_navigation_dummy, container, false);
 			TextView dummyTextView = (TextView) rootView
 					.findViewById(R.id.section_label);
-			dummyTextView.setText(Integer.toString(getArguments().getInt(
-					ARG_SECTION_NUMBER)));
+			
+			SharedPreferences preferences = getActivity().getPreferences(MODE_PRIVATE);
+			String name = preferences.getString("name", "Isim yok");
+			dummyTextView.setText(name);
+						
 			return rootView;
 		}
 	}

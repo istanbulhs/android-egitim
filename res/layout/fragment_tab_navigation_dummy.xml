@@ -13,5 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textIsSelectable="True" />
-
+	<TextView
+        android:id="@+id/section_wifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textIsSelectable="True" />
+    
 </RelativeLayout>

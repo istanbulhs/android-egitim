@@ -22,6 +22,7 @@
          Asagidaki tag'in icine uygulamanin backup edilebilir olup olmadigi, uygulama iconunu, uygulama adini,
     	uygulama temasinin ne oldugunu belirtiyoruz
     -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"

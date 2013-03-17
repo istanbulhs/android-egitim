@@ -22,8 +22,7 @@ public class LatestNewsAsyncTask extends AsyncTask<Void, Void, String> {
 
 	@Override
 	protected String doInBackground(Void... arg0) {
-		this.retrieveLatestNews();
-		return null;
+		return this.retrieveLatestNews();
 	}
 
 	@Override
@@ -34,7 +33,7 @@ public class LatestNewsAsyncTask extends AsyncTask<Void, Void, String> {
 
 	
 	private String retrieveLatestNews() {
-		String url = "http://hamdi.safkanyazilim.com/json/latest";
+		String url = "http://hamdi.safkanyazilim.com/json/latest-post";
 		String response = HttpUtil.getResponseStringForHttpRequestBetter(url);
 		Log.i("hs", response);
 		

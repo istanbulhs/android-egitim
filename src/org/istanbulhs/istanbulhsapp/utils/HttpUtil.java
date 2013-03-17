@@ -27,6 +27,7 @@ import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 
 
@@ -155,6 +156,21 @@ public class HttpUtil {
 		
     	return responseString;
     	 
+    }
+    
+    public static Drawable loadImageFromWeb(String url) {
+        Drawable d = null;
+    	
+    	try {
+            InputStream is = (InputStream) new URL(url).getContent();
+            d = Drawable.createFromStream(is, "src name");
+            
+        } catch (Exception e) {
+            Log.e("hs", "Exception caught in image loading");
+            Log.e("hs", e.getMessage());
+        }
+    	
+    	return d;
     }
     
 }
