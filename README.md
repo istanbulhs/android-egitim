@@ -25,15 +25,15 @@ Google Android Maps API v2 ile Android'de uygulama geliştirme için yapılması
 ========================================================================================
 1. SDK Manager’dan Extras’ın altında Play Store SDK’yi indirin. 
 
-* SDK Manager’i açmak için
+ * SDK Manager’i açmak için
 
-![Eclipse'ten SDK Manager](https://raw.github.com/istanbulhs/android-egitim/master/README-images/sdk-manager-from-eclipse.png)
+ ![Eclipse'ten SDK Manager](https://raw.github.com/istanbulhs/android-egitim/master/README-images/sdk-manager-from-eclipse.png)
 
-* Google Play Store SDK’yi ve Android 2.2’nin altındaki SDK Platform’u seçin
+ * Google Play Store SDK’yi ve Android 2.2’nin altındaki SDK Platform’u seçin
 
-![Google Play Services paketi](https://raw.github.com/istanbulhs/android-egitim/master/README-images/google-play-services-package.png)
+ ![Google Play Services paketi](https://raw.github.com/istanbulhs/android-egitim/master/README-images/google-play-services-package.png)
 
-![Android 2.2 paketi](https://raw.github.com/istanbulhs/android-egitim/master/README-images/android-2.2.png)
+ ![Android 2.2 paketi](https://raw.github.com/istanbulhs/android-egitim/master/README-images/android-2.2.png)
 
 2. Google Play SDK’yi bir proje olarak Eclipse’e ekleyin. 
 	Şöyle: Eclipse’te **File > Import**'ı tıklayın. 
@@ -49,24 +49,24 @@ Google Android Maps API v2 ile Android'de uygulama geliştirme için yapılması
 
 	![Library ekleme](https://raw.github.com/istanbulhs/android-egitim/master/README-images/add-library-as-dependency.png)
 
-Burda projenizi bir build edin. Herşey yolunda mı diye bir bakın. 
+   Burda projenizi bir build edin. Herşey yolunda mı diye bir bakın. 
 
 4. Google Maps API Key alın. 
 
-* androiddebugkey’inin SHA1 fingerprintini almamız gerekiyor
+ * androiddebugkey’inin SHA1 fingerprintini almamız gerekiyor
 
-**Linux ve Mac**
-'''keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android'''
+ **Linux ve Mac**
+ '''keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android'''
 
-**Windows**
-'''keytool -list -v -keystore "C:\Users\your_user_name\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android'''
+ **Windows**
+ '''keytool -list -v -keystore "C:\Users\your_user_name\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android'''
 
-Keytool bulunamadı gibi bir hata alırsanız o zaman Java’nın kurulu olduğu yere gidin burda bin klasörünün içinde olması gerekiyor
-Genelde Windows icin
-C:\Program Files\Java\jdk1.6.0_25\bin\keytool.exe gibi birşey olması gerekir
+ Keytool bulunamadı gibi bir hata alırsanız o zaman Java’nın kurulu olduğu yere gidin burda bin klasörünün içinde olması gerekiyor
+ Genelde Windows icin
+ C:\Program Files\Java\jdk1.6.0_25\bin\keytool.exe gibi birşey olması gerekir
 
 
-Bu size suna benzer birsey donecek:
+ Bu size suna benzer birsey donecek:
      '''Alias name: androiddebugkey 
      Creation date: 09.Mar.2013 
      Entry type: PrivateKeyEntry
@@ -83,9 +83,9 @@ Bu size suna benzer birsey donecek:
      Version: 3
      '''
 
-Burda bizi ilgilendiren kısım Certificate fingerprints'in altındaki SHA1'nın yanındaki kısım.
+ Burda bizi ilgilendiren kısım Certificate fingerprints'in altındaki SHA1'nın yanındaki kısım.
 
-* Google API’de bir proje yaratin. 
+ * Google API’de bir proje yaratin. 
 
 	https://code.google.com/apis/console/?pli=1
 	Sağ üstte tıklayıp Hackerspace-Egitim adında yeni bir proje yaratın.
@@ -99,10 +99,10 @@ Burda bizi ilgilendiren kısım Certificate fingerprints'in altındaki SHA1'nın
 	Android App için oluşan API Key’i kopyalayın.
 
 5. API Key’i manifest dosyanıza ekleyin.
-API KEY şuna benzer birşey:
-AIzaXXAYSzBmJbWtGaUH-pQqb0c2rRO-6N-Oeng
+ API KEY şuna benzer birşey:
+ AIzaXXAYSzBmJbWtGaUH-pQqb0c2rRO-6N-Oeng
 
-AndroidManifext.xml’de </application> tag’inin hemen oncesine key’inizi şu kodla ekleyin:
+ AndroidManifext.xml’de </application> tag’inin hemen oncesine key’inizi şu kodla ekleyin:
 
 	'''...
 		<meta-data
@@ -118,9 +118,9 @@ AndroidManifext.xml’de </application> tag’inin hemen oncesine key’inizi ş
 		<uses-feature android:glEsVersion="0x00020000" android:required="true" />
 		<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>'''
 
-Fiziksel bir telefondaysaniz calismasi lazim:
+ Fiziksel bir telefondaysaniz calismasi lazim:
 
-Eger degilseniz emulatore Google Play Store yuklememiz gerekiyor.
+ Eğer değilseniz emulatore Google Play Store yüklememiz gerekiyor.
 
 7. <ADT-Bundle’i-koyduğunuz-yer>/adt-bundle-mac-x86_64/sdk/platform-tools
 	*Windows*: adb
@@ -129,18 +129,18 @@ Eger degilseniz emulatore Google Play Store yuklememiz gerekiyor.
 	'''./adb devices''' : komutu ile bağlı cihazları görebilirsiniz
 	
 
-Asagidaki iki dosyayi bilgisayariniza indirin:
+ Asagidaki iki dosyayi bilgisayariniza indirin:
 
-	![com.android.vending.apk](https://raw.github.com/istanbulhs/android-egitim/master/README-images/com.android.vending.apk)
-	![com.google.android.gms.apk](https://raw.github.com/istanbulhs/android-egitim/master/README-images/com.google.android.gms.apk)
+	https://raw.github.com/istanbulhs/android-egitim/master/README-images/com.android.vending.apk
+	https://raw.github.com/istanbulhs/android-egitim/master/README-images/com.google.android.gms.apk
 
-İndirdikten sonra adb ile cihaziniza şu şekilde kurun
+ İndirdikten sonra adb ile cihaziniza şu şekilde kurun
 
-'''adb install com.android.vending.apk'''
-Success yazisini gordukten sonra ikincisini
-'''adb install com.google.android.gms.apk'''
+ '''adb install com.android.vending.apk'''
+ Success yazisini gordukten sonra ikincisini
+ '''adb install com.google.android.gms.apk'''
 
-Bunda da success yazısını gördüyseniz artık uygulamanıza bir harita ekleyebilirsiniz. 
+ Bunda da success yazısını gördüyseniz artık uygulamanıza bir harita ekleyebilirsiniz. 
 
 
 
