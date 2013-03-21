@@ -24,17 +24,11 @@ Veya en kısası aşağıdaki linkten istediğiniz dersin kodunu indirebilirsini
 Google Android Maps API v2 ile Android'de uygulama geliştirme için yapılması gerekenler
 ========================================================================================
 1. SDK Manager’dan Extras’ın altında Play Store SDK’yi indirin. 
-
    * SDK Manager’i açmak için
-
      ![Eclipse'ten SDK Manager](https://raw.github.com/istanbulhs/android-egitim/master/README-images/sdk-manager-from-eclipse.png)
-
    * Google Play Store SDK’yi ve Android 2.2’nin altındaki SDK Platform’u seçin
-
      ![Google Play Services paketi](https://raw.github.com/istanbulhs/android-egitim/master/README-images/google-play-services-package.png)
-
      ![Android 2.2 paketi](https://raw.github.com/istanbulhs/android-egitim/master/README-images/android-2.2.png)
-
 2. Google Play SDK’yi bir proje olarak Eclipse’e ekleyin. 
    Şöyle: Eclipse’te **File > Import**'ı tıklayın. 
    Burda **Android > Existing Android Code into Workspace** ‘i seçin. 
