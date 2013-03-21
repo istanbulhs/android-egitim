@@ -89,28 +89,30 @@ Google Android Maps API v2 ile Android'de uygulama geliştirme için yapılması
    API KEY şuna benzer birşey:
    <code>AIzaXXAYSzBmJbWtGaUH-pQqb0c2rRO-6N-Oeng</code>
    
-   AndroidManifext.xml’de  &lt;/application&gt; tag’inin hemen oncesine key’inizi şu kodla ekleyin:
+   AndroidManifext.xml’de  </application> tag’inin hemen oncesine key’inizi şu kodla ekleyin:
    
    <code>...
-		&lt;meta-data
+   
+		<meta-data
    			 android:name="com.google.android.maps.v2.API_KEY"
-   		 android:value="AIzaXXAYSzBmJbWtGaUH-pQqb0c2rRO-6N-Oeng"/&gt;
+   		 android:value="AIzaXXAYSzBmJbWtGaUH-pQqb0c2rRO-6N-Oeng"/>
 		
-		&lt;/application&gt;
+		</application>
+   
    ...</code>
    
 6. AndroidManifest’e izinleri ekleyin (Github'dan aldığınız kodların içinde bunlar var.)
-   <code>&lt;permission android:name="org.istanbulhs.istanbulhsapp.permission.MAPS_RECEIVE"
-        android:protectionLevel="signature"/&gt;
+   <code><permission android:name="org.istanbulhs.istanbulhsapp.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature"/>
 		
-		&lt;uses-permission android:name="org.istanbulhs.istanbulhsapp.permission.MAPS_RECEIVE"/&gt;
+		<uses-permission android:name="org.istanbulhs.istanbulhsapp.permission.MAPS_RECEIVE"/>
 		
-		&lt;uses-feature android:glEsVersion="0x00020000" android:required="true" /&gt;
+		<uses-feature android:glEsVersion="0x00020000" android:required="true" />
 		
-		&lt;uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/&gt;
+		<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
 	</code>
 
-   Fiziksel bir telefondaysaniz calismasi lazim:
+   Fiziksel bir telefondaysanız calışması lazım:
 
    Eğer değilseniz emulatore Google Play Store yüklememiz gerekiyor.
 
@@ -128,7 +130,9 @@ Google Android Maps API v2 ile Android'de uygulama geliştirme için yapılması
    İndirdikten sonra adb ile cihaziniza şu şekilde kurun
 
    <code>adb install com.android.vending.apk</code>
+   
    Success yazisini gordukten sonra ikincisini
+   
    <code>adb install com.google.android.gms.apk</code>
 
    Bunda da success yazısını gördüyseniz artık uygulamanıza bir harita ekleyebilirsiniz. 
