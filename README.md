@@ -61,7 +61,8 @@ Google Android Maps API v2 ile Android'de uygulama geliştirme için yapılması
      C:\Program Files\Java\jdk1.6.0_25\bin\keytool.exe gibi birşey olması gerekir
 
      Bu size suna benzer birsey donecek:
-     '''Alias name: androiddebugkey 
+     '''
+     Alias name: androiddebugkey 
      Creation date: 09.Mar.2013 
      Entry type: PrivateKeyEntry
      Certificate chain length: 1
@@ -96,44 +97,43 @@ Google Android Maps API v2 ile Android'de uygulama geliştirme için yapılması
    API KEY şuna benzer birşey:
    AIzaXXAYSzBmJbWtGaUH-pQqb0c2rRO-6N-Oeng
 
-   AndroidManifext.xml’de </application> tag’inin hemen oncesine key’inizi şu kodla ekleyin:
+   AndroidManifext.xml’de  &lt;/application&gt; tag’inin hemen oncesine key’inizi şu kodla ekleyin:
 
-   '''
-   ...
-		<meta-data
+   <code>...
+		&lt;meta-data
    			 android:name="com.google.android.maps.v2.API_KEY"
-   		 android:value="AIzaXXAYSzBmJbWtGaUH-pQqb0c2rRO-6N-Oeng"/>
-		</application>
-   ...
-   '''
+   		 android:value="AIzaXXAYSzBmJbWtGaUH-pQqb0c2rRO-6N-Oeng"/&gt;
+		&lt;/application&gt;
+   ...</code>
 
 6. AndroidManifest’e izinleri ekleyin (Github'dan aldığınız kodların içinde bunlar var.)
-   '''<permission android:name="org.istanbulhs.istanbulhsapp.permission.MAPS_RECEIVE"
-        android:protectionLevel="signature"/>
-		<uses-permission android:name="org.istanbulhs.istanbulhsapp.permission.MAPS_RECEIVE"/>
-		<uses-feature android:glEsVersion="0x00020000" android:required="true" />
-		<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>'''
+   <code>&lt;permission android:name="org.istanbulhs.istanbulhsapp.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature"/&gt;
+		&lt;uses-permission android:name="org.istanbulhs.istanbulhsapp.permission.MAPS_RECEIVE"/&gt;
+		&lt;uses-feature android:glEsVersion="0x00020000" android:required="true" /&gt;
+		&lt;uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/&gt;
+	</code>
 
    Fiziksel bir telefondaysaniz calismasi lazim:
 
    Eğer değilseniz emulatore Google Play Store yüklememiz gerekiyor.
 
-7. <ADT-Bundle’i-koyduğunuz-yer>/adt-bundle-mac-x86_64/sdk/platform-tools
-   *Windows*: adb
-   *Linux, Mac*: ./adb
+7. &lt;ADT-Bundle’i-koyduğunuz-yer&gt;/adt-bundle-mac-x86_64/sdk/platform-tools
+   *Windows*: <code>adb</code>
+   *Linux, Mac*: <code>./adb</code>
 
-   '''./adb devices''' : komutu ile bağlı cihazları görebilirsiniz
+   <code>./adb devices</code> : komutu ile bağlı cihazları görebilirsiniz
 
-   Asagidaki iki dosyayi bilgisayariniza indirin:
+   Asağıdaki iki dosyayı bilgisayarınıza indirin:
 
    https://raw.github.com/istanbulhs/android-egitim/master/README-images/com.android.vending.apk
    https://raw.github.com/istanbulhs/android-egitim/master/README-images/com.google.android.gms.apk
 
    İndirdikten sonra adb ile cihaziniza şu şekilde kurun
 
-   '''adb install com.android.vending.apk'''
+   <code>adb install com.android.vending.apk</code>
    Success yazisini gordukten sonra ikincisini
-   '''adb install com.google.android.gms.apk'''
+   <code>adb install com.google.android.gms.apk</code>
 
    Bunda da success yazısını gördüyseniz artık uygulamanıza bir harita ekleyebilirsiniz. 
 
