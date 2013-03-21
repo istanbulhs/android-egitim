@@ -25,6 +25,7 @@ Google Android Maps API v2 ile Android'de uygulama geliştirme için yapılması
 ========================================================================================
 1. SDK Manager’dan Extras’ın altında Play Store SDK’yi indirin. 
    * SDK Manager’i açmak için
+   
      ![Eclipse'ten SDK Manager](https://raw.github.com/istanbulhs/android-egitim/master/README-images/sdk-manager-from-eclipse.png)
    * Google Play Store SDK’yi ve Android 2.2’nin altındaki SDK Platform’u seçin
      ![Google Play Services paketi](https://raw.github.com/istanbulhs/android-egitim/master/README-images/google-play-services-package.png)
