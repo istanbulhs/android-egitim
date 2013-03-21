@@ -47,21 +47,19 @@ Google Android Maps API v2 ile Android'de uygulama geliştirme için yapılması
    Burda projenizi bir build edin. Herşey yolunda mı diye bir bakın. 
 
 4. Google Maps API Key alın. 
-
    * androiddebugkey’inin SHA1 fingerprintini almamız gerekiyor
-
      **Linux ve Mac**
-     '''keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android'''
+     <code>keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android</code>
 
      **Windows**
-     '''keytool -list -v -keystore "C:\Users\your_user_name\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android'''
+     <code>keytool -list -v -keystore "C:\Users\your_user_name\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android</code>
 
      Keytool bulunamadı gibi bir hata alırsanız o zaman Java’nın kurulu olduğu yere gidin burda bin klasörünün içinde olması gerekiyor
      Genelde Windows icin
-     C:\Program Files\Java\jdk1.6.0_25\bin\keytool.exe gibi birşey olması gerekir
+     <code>C:\Program Files\Java\jdk1.6.0_25\bin\keytool.exe</code> gibi birşey olması gerekir
 
      Bu size suna benzer birsey donecek:
-     '''
+     <code>
      Alias name: androiddebugkey 
      Creation date: 09.Mar.2013 
      Entry type: PrivateKeyEntry
@@ -76,41 +74,39 @@ Google Android Maps API v2 ile Android'de uygulama geliştirme için yapılması
      SHA1: CF:DE:2C:3E:CA:F6:EC:3D:A0:30:70:CB:CA:D3:BD:9C:A0:95:11:3C
      Signature algorithm name: SHA1withRSA
      Version: 3
-     '''
-
+     </code>
      Burda bizi ilgilendiren kısım Certificate fingerprints'in altındaki SHA1'nın yanındaki kısım.
-
-   * Google API’de bir proje yaratin. 
-
+   * Google API’de bir proje yaratın. 
      https://code.google.com/apis/console/?pli=1
 	 Sağ üstte tıklayıp Hackerspace-Egitim adında yeni bir proje yaratın.
 	 Servislerin arasından Google Maps Android API v2 ‘yi açık konumuna getirin.
-
 	 Gene sol üstte API Access’i tıklayın.
 	 Burda Create New Android Key butonunu tıklayın. Açılan pencereye SHA1  Fingerprintimi ve package name’i araya bir ; koyarak ekleyin.
 	 Kendi keyinizi kullanmaniz gerekiyor.
-     '''XX:DE:2C:3E:CA:F6:EC:3D:A0:30:DD:CB:CA:D3:FF:9C:A0:95:11:3C;org.istanbulhs.istanbulhsapp'''
-
+     <code>XX:DE:2C:3E:CA:F6:EC:3D:A0:30:DD:CB:CA:D3:FF:9C:A0:95:11:3C;org.istanbulhs.istanbulhsapp</code>
 	 Android App için oluşan API Key’i kopyalayın.
-
 5. API Key’i manifest dosyanıza ekleyin.
    API KEY şuna benzer birşey:
-   AIzaXXAYSzBmJbWtGaUH-pQqb0c2rRO-6N-Oeng
-
+   <code>AIzaXXAYSzBmJbWtGaUH-pQqb0c2rRO-6N-Oeng</code>
+   
    AndroidManifext.xml’de  &lt;/application&gt; tag’inin hemen oncesine key’inizi şu kodla ekleyin:
-
+   
    <code>...
 		&lt;meta-data
    			 android:name="com.google.android.maps.v2.API_KEY"
    		 android:value="AIzaXXAYSzBmJbWtGaUH-pQqb0c2rRO-6N-Oeng"/&gt;
+		
 		&lt;/application&gt;
    ...</code>
-
+   
 6. AndroidManifest’e izinleri ekleyin (Github'dan aldığınız kodların içinde bunlar var.)
    <code>&lt;permission android:name="org.istanbulhs.istanbulhsapp.permission.MAPS_RECEIVE"
         android:protectionLevel="signature"/&gt;
+		
 		&lt;uses-permission android:name="org.istanbulhs.istanbulhsapp.permission.MAPS_RECEIVE"/&gt;
+		
 		&lt;uses-feature android:glEsVersion="0x00020000" android:required="true" /&gt;
+		
 		&lt;uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/&gt;
 	</code>
 
