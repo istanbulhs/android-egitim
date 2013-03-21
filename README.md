@@ -117,7 +117,9 @@ Google Android Maps API v2 ile Android'de uygulama geliştirme için yapılması
    Eğer değilseniz emulatore Google Play Store yüklememiz gerekiyor.
 
 7. &lt;ADT-Bundle’i-koyduğunuz-yer&gt;/adt-bundle-mac-x86_64/sdk/platform-tools
+
    *Windows*: <code>adb</code>
+   
    *Linux, Mac*: <code>./adb</code>
 
    <code>./adb devices</code> : komutu ile bağlı cihazları görebilirsiniz
