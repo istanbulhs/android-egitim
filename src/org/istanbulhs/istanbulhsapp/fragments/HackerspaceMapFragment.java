@@ -15,50 +15,44 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class HackerspaceMapFragment extends SupportMapFragment {
-
-	private static LatLng hackerspaceLocation;
 	
-
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-	}
-
-
-
 	@Override
 	public View onCreateView(LayoutInflater arg0, ViewGroup arg1, Bundle arg2) {
 	    View v = super.onCreateView(arg0, arg1, arg2);
-	    initMap();
+	    this.initMap();
 	    return v;
 	}
 
 
 	private void initMap(){
-		
-		hackerspaceLocation = new LatLng(40.993498, 29.042059);
+		//Haritanin orta noktasini Hackerspace'e ayarliyoruz
+		//Hackerspace'in lokasyonu
+		LatLng hackerspaceLocation = new LatLng(40.993498, 29.042059);
 		CameraPosition cameraPosition = new CameraPosition.Builder()
-	    .target(hackerspaceLocation)      // Sets the center of the map to Mountain View
-	    .zoom(16)                   // Sets the zoom
-	    .build(); 
+	    												  .target(hackerspaceLocation)      // Sets the center of the map to Mountain View
+	    												  .zoom(16)  // Zoom'u ayarlar
+	    												  .build(); 
 		
 		CameraUpdate update = CameraUpdateFactory.newCameraPosition(cameraPosition);
-		
 		getMap().moveCamera(update);
 		
-		this.addMarker(getMap());
+		//kendi yerimizi ve hackerspace'in yerini iþaretliyoruz
+		this.addMarker(getMap(), hackerspaceLocation);
 	    
 	}
 	
-	private void addMarker(GoogleMap map) {
+	private void addMarker(GoogleMap map, LatLng hackerspaceLocation) {
 		if (map != null) {
+			//Hackerspace'in oldugu yerde kirmizi bir balon cikarmak icin
 			MarkerOptions options = new MarkerOptions();
 			options.position(hackerspaceLocation);
 			map.addMarker(options);
 			
+			//Haritada kendi lokasyonumuzu gormek icin
 			map.setMyLocationEnabled(true);
 			
 		} else {
+			//map objesi null ise log atiyoruz
 			Log.e("hs","Map object is null");
 		}
 	}

@@ -16,13 +16,25 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="17" />
+    <!-- Telefon etme, internete baglanma, kontaklari okuma izinleri -->
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+   <!-- Haritayi kullanmak icin eklenen izinler -->
+    <permission
+        android:name="org.istanbulhs.istanbulhsapp.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature"/>
+	<uses-permission android:name="org.istanbulhs.istanbulhsapp.permission.MAPS_RECEIVE"/>
+
+	<uses-feature android:glEsVersion="0x00020000" android:required="true" />
+	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <!-- Lokasyon bilgisine ulasmak icin izinler -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <!--
          Asagidaki tag'in icine uygulamanin backup edilebilir olup olmadigi, uygulama iconunu, uygulama adini,
     	uygulama temasinin ne oldugunu belirtiyoruz
     -->
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -51,6 +63,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+   			 android:name="com.google.android.maps.v2.API_KEY"
+   		 android:value="kendi_map_api_anahtariniz"/>
     </application>
 
 </manifest>

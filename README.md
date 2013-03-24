@@ -12,14 +12,14 @@ Anrdoid eğitimi sırasında yazdığımız uygulama
 	Bir ListActivity yarattık. İsimlerden oluşan bir liste gösterdik. İsmin üstüne tıklandığında o isme ait email adresini gösteren bir kutucuk göstermeyi gördük. 
 	
 	
-
 ![Github'da Tag seçme](https://raw.github.com/istanbulhs/android-egitim/master/README-images/tag-screenshot.png)
 
 Veya en kısası aşağıdaki linkten istediğiniz dersin kodunu indirebilirsiniz:
 ![Dersler](https://github.com/istanbulhs/android-egitim/tags)
 
 
-5. ders öncesinde kendi bilgisayarınızda yapmanız gereken hazırlıklar var. 
+Beşinci ders öncesinde kendi bilgisayarınızda yapmanız gereken hazırlıklar var. 
+Android v4.2 için.
 
 Google Android Maps API v2 ile Android'de uygulama geliştirme için yapılması gerekenler
 ========================================================================================
@@ -87,34 +87,30 @@ Google Android Maps API v2 ile Android'de uygulama geliştirme için yapılması
 	 Android App için oluşan API Key’i kopyalayın.
 5. API Key’i manifest dosyanıza ekleyin.
    API KEY şuna benzer birşey:
+   
    <code>AIzaXXAYSzBmJbWtGaUH-pQqb0c2rRO-6N-Oeng</code>
    
    AndroidManifext.xml’de  </application> tag’inin hemen oncesine key’inizi şu kodla ekleyin:
    
    <code>...
-   
 		<meta-data
    			 android:name="com.google.android.maps.v2.API_KEY"
    		 android:value="AIzaXXAYSzBmJbWtGaUH-pQqb0c2rRO-6N-Oeng"/>
-		
 		</application>
-   
-   ...</code>
+   		...
+   </code>
    
 6. AndroidManifest’e izinleri ekleyin (Github'dan aldığınız kodların içinde bunlar var.)
    <code><permission android:name="org.istanbulhs.istanbulhsapp.permission.MAPS_RECEIVE"
-        android:protectionLevel="signature"/>
-		
+        android:protectionLevel="signature"/>		
 		<uses-permission android:name="org.istanbulhs.istanbulhsapp.permission.MAPS_RECEIVE"/>
-		
 		<uses-feature android:glEsVersion="0x00020000" android:required="true" />
-		
 		<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
 	</code>
 
-   Fiziksel bir telefondaysanız calışması lazım:
+   Fiziksel bir telefondaysanız calışması lazım.
 
-   Eğer değilseniz emulatore Google Play Store yüklememiz gerekiyor.
+   Eğer değilseniz emulatore Google Play Store ve Map'i yüklememiz gerekiyor.
 
 7. &lt;ADT-Bundle’i-koyduğunuz-yer&gt;/adt-bundle-mac-x86_64/sdk/platform-tools
 

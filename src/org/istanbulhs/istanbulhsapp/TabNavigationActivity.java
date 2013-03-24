@@ -3,6 +3,7 @@ package org.istanbulhs.istanbulhsapp;
 import java.util.Locale;
 
 import org.istanbulhs.istanbulhsapp.fragments.ContactFragment;
+import org.istanbulhs.istanbulhsapp.fragments.HackerspaceMapFragment;
 import org.istanbulhs.istanbulhsapp.fragments.ItemFragment;
 import org.istanbulhs.istanbulhsapp.fragments.NormalFragment;
 
@@ -72,26 +73,31 @@ public class TabNavigationActivity extends FragmentActivity  {
 		//Tab'in hangi sayfayi gosterecegi bu metodla donuyor
 		@Override
 		public Fragment getItem(int position) {
-			// getItem is called to instantiate the fragment for the given page.			// Return a DummySectionFragment (defined as a static inner class
-			// below) with the page number as its lone argument.
-			
+			//Tablara tiklayinca acilacak ekranlar asagida yaratiliyor
 			Fragment fragment = null;
 			switch (position) {
 				case 0:
+					//Giristeki fragment
 					fragment = new NormalFragment(); 
 					return fragment;
 				case 1:
+					//Kisi listesi
 					fragment = new ItemFragment();
 					return fragment;
 				case 2:
+					//İlk ekranda kaydettigimiz ismi burda yeniden okuyoruz
 					fragment = new DummySectionFragment();
 					Bundle args = new Bundle();
 					args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
 					fragment.setArguments(args);
 					return fragment;
 				case 3:
+					//Kontakt listesi ekrani
 					fragment = new ContactFragment();
 					return fragment;
+				case 4:
+					//Harita fragmenti
+					return new HackerspaceMapFragment();
 			}
 			return fragment;
 		}
@@ -99,8 +105,8 @@ public class TabNavigationActivity extends FragmentActivity  {
 		//Kac tane tab varsa o rakam donuluyor
 		@Override
 		public int getCount() {
-			// Show 3 total pages.
-			return 4;
+			//Toplam tab sayisi
+			return 5;
 		}
 
 		//Tab basliklarini donen metod
@@ -116,6 +122,8 @@ public class TabNavigationActivity extends FragmentActivity  {
 				return getString(R.string.title_section3).toUpperCase(l);
 			case 3:
 				return "BIZIM KISILER";
+			case 4: 
+				return "BIZIM HARITA";
 			}
 			return null;
 		}
